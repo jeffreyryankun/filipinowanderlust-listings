@@ -1,0 +1,81 @@
+<% layout('/layouts/boilerplate') -%>
+
+<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAYWZiP-UpM2eDeBU_44WCcqLLVNee-jqA&libraries=places"></script>
+
+ <script src="https://code.jquery.com/jquery-3.6.0.js"crossorigin="anonymous"></script>
+
+
+<div class="row">  
+    <h1 class="text-center">New Listing</h1>
+    <div class="col-6 offset-3">
+
+
+        <form action="/listings" method="post">
+            <div class="mb-3">
+                
+                <label class ="form-label" for="name">Place Name</label>
+                <input class ="form-control" type="text" id="name" name="listing[name]">
+            
+            </div>
+            
+            <div class="mb-3">
+                
+                <label class ="form-label" for="location">Location</label>
+                <input class ="form-control" type="text" id="autocomplete" name="listing[location]">
+                <script>
+                    var autocomplete = new google.maps.places.Autocomplete(document.getElementById('autocomplete'));
+                </script>
+
+
+            </div>
+
+            <div class="mb-3">
+                
+                <label class ="form-label" for="image">Image URL</label>
+                <input class ="form-control" type="text" id="image" name="listing[image]">
+            
+            </div>
+            
+            <div class="mb-3">
+                <label class ="form-label" for="price">Price</label>
+                <div class="input-group">
+                    <span class="input-group-text" id="price-label">₱</span>
+                    <input type="text" class="form-control" placeholder="0.00" aria-label="price" aria-describedby="price-label" id="price" name="listing[price]">
+
+                </div>
+            </div>
+
+
+            <div class="mb-3">
+                
+                <label class ="form-label" for="description">Description</label>
+                <textarea class ="form-control" type="description" id="description" name="listing[description]"></textarea>
+            
+            </div>
+
+            <div class="mb-3">
+                
+                <label class ="form-label" for="username">Username</label>
+                <input class ="form-control" type="text" id="username" name="listing[username]">
+            
+            </div>
+
+            <div class="mb-3">
+                
+                <label class ="form-label" for="review">Reviews</label>
+                <textarea class ="form-control" type="description" id="review" name="listing[review]"></textarea>
+            
+            </div>
+
+
+            <div class="mb-3">
+                <button class="btn btn-success"> Add listing </button>
+                <a class="btn btn-success" href="/listings">Cancel</a>
+            </div>
+
+            
+        </form>
+    </div>
+
+</div>
+

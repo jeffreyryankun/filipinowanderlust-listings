@@ -1,0 +1,39 @@
+<% layout('/layouts/boilerplate') -%>
+
+<div class="row">
+    <div class="col-6 offset-3">
+        <div class="card mb-3">
+            <img src="<%= listing.image %>" class="card-img-top" alt="...">
+            <div class="card-body">
+              <h5 class="card-title"><%= listing.name %></h5>
+              <p class="card-text"><%= listing.description %></p>
+              <a href="/listings" class="btn btn-primary">Go to Other Places</a>
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item text-muted"><%= listing.location %></li>
+                <li class="list-group-item">₱<%= listing.price %>/Night</li>
+                <li class="list-group-item text-muted">UPLOADED BY:<%= listing.username %></li>
+                <li class="list-group-item text-muted">REVIEWS:<%= listing.review %></li>
+            </ul>
+
+            <div class="card-body">
+
+                <a class="card-link btn btn-success" href="/listings/<%= listing._id %>/edit">Edit</a>
+
+                <form class="d-inline" action="/listings/<%= listing._id%>?_method=delete" method="post">
+                    <button class="btn btn-danger">Delete</button>
+                </form>
+                
+
+            </div>
+
+            <div class="card-footer text-muted">
+                1 day ago
+
+            </div>
+
+          </div>
+    </div>
+
+</div>
+
